@@ -1,0 +1,47 @@
+файл №1 - rectangle.py
+
+class Restangle:
+    def __init__(self,a,b):                     
+        self.a = a
+        self.b = b
+    def get_area(self):
+        return self.a * self.b
+
+class Square:
+    def __init__(self, a):
+        self.a = a
+    def get_area_square(self):
+        return self.a ** 2
+#возведение в степень **2(в квадрат)
+
+class Circle:
+    def __init__(self, r):
+        self.r = r
+
+    def get_area_circle(self):
+        return 3.14 * self.r ** 2
+
+файл №2 - rectangle_1.py
+
+from rectangle import Restangle, Square, Circle
+# далее создаём два прямоугольника
+rest_1 = Restangle(3,4)
+rest_2 = Restangle(12,5)
+# вывод площади наших двух прямоугольников
+print(rest_1.get_area())
+print(rest_2.get_area())
+
+square_1 = Square(5)
+square_2 = Square(10)
+
+print(square_1.get_area_square(),
+      square_1.get_area_square())
+figures = [rest_1, rest_2, square_1, square_2]
+for figure in figures:
+    if isinstance(figure, Square):
+       print(figure.get_area_square())
+    else:
+       print(figure.get_area())
+
+circle_1 = Circle(5)
+print(circle_1.get_area_circle())
